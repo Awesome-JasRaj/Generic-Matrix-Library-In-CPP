@@ -417,6 +417,37 @@ public:
         return inv;
 
     }
+    template<typename T1>
+    Matrix Append(T1 &m,int type=1){
+    	int r = (*this).row,c = (*this).col,k=0;
+    	if(type){
+    	(*this).resize(r+1,c);
+    	for(int i=0;i<c;i++){
+    			(*this)[r][i] = m[k++];
+    			row = r+1;
+    		}
+    	}
+    	else{
+    	    	(*this).resize(r,c+1);
+    	    	for(int i=0;i<r;i++){
+    			(*this)[i][c] = m[k++];
+    			col = c+1;
+    			}
+    	    }
+    	return (*this);
+
+
+    }
+    Matrix Power(int n){
+    	if(n==1)
+    		return (*this);
+    	Matrix<T> t((*this).row,(*this).col);
+    	t = (*this);
+    	for(int i=0;i<n-1;i++){
+    		t*=t;
+    	}
+    	return t;
+    }
     bool isIdentity(Matrix& m){
     	if(m.row!=m.col)
     		return false;

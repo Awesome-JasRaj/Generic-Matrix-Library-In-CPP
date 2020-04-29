@@ -49,6 +49,7 @@ void init(){
         cout<<*it<<"\n";
     }
     cout<<"\n\n";
+    
     fin.close();
 }
 
@@ -70,8 +71,18 @@ void opr(){
 	cout<<"No of coloumns: "<<m1.cols()<<endl;
 	cout<<"No of elements: "<<m1.no_of_elements()<<endl;
 	cout<<"The value present at matrix["<<crow<<"]["<<ccol<<"]: "<<m1[crow-1][ccol-1]<<endl;
-	
-
+	Matrix<int> X(row,col);
+	X = m1;
+	cout<<"\n\nAppend Row"<<endl;
+    vector<int> v2(3);
+    int ele = 1;
+    for(int i=0;i<3;i++)
+    	v2[i] = ele++;
+    X.Append(v2,1);
+    X.display();
+    cout<<"\nAppend Coloumn"<<endl;
+    X.Append(v2,0);
+    X.display();
 	/* A second matrix to perform binary operations */
 	cout<<endl;
 	fin>>row1;
@@ -151,5 +162,10 @@ void opr(){
 	inverse.display();
 	cout<<"\nInverse of the matrix: \n"<<endl;
 	cout<<inverse.Inverse();
+	int pow;
+	fin>>pow;
+	cout<<"Matrix to the power of "<<pow<<"\n\n";
+	cout<<m2;
+	cout<<m2.Power(pow);
 	fin.close();
 }
