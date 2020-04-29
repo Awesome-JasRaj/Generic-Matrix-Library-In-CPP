@@ -174,6 +174,24 @@ public:
 		 	}
 		 }
     }
+    Matrix(int n){		//Identity matrix of order n
+    	row = n;
+    	col = n;
+    	mat=new T*[row];
+        for(int i=0;i<row;i++)
+        {
+            mat[i]=new T[col];
+        }
+		 for(int i=0;i<row;i++){
+		 	for(int j=0;j<col;j++){
+		 		if(i==j){
+		 			mat[i][j] = 1;
+		 			continue;
+		 		}
+		 		mat[i][j] = 0;
+		 	}
+		 }
+    }
     auto& operator[](int ind){
         return mat[ind];
     }
@@ -400,15 +418,13 @@ public:
 
     }
     bool isIdentity(Matrix& m){
-    	if(m.rows()!=m.cols())
+    	if(m.row!=m.col)
     		return false;
-    	for(int i=0;i<m.rows();i++){
-    		for(int j=0;j<m.cols();j++){
-    			if(m[i][j]!=1)
-    				return false;
-    		}
-    	}
-    	return true;
+    	Matrix t(m.row);
+    	return (t==m);
+    }
+    bool square(Matrix &m){
+    	return (m.row==m.col);
     }
     void display() 
 	{
