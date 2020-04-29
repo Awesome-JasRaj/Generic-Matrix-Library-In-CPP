@@ -6,12 +6,12 @@ Currently there is support for <br>
 1. Initialization using vecotrs,other matrices.
 2. Initialization using copy constructor and identity matrix.
 3. Iterator support. 2 types (row major iteration and column major iteration)
-4. resize
-5. append row/column
+4. Resize
+5. Append row/column
 6. Indexing operator []
 7. Equality Operators == and !=
-8. print << operator
-9. Matrix Multiplication Operator *
+8. Cout << operator
+9. Matrix Multiplication
 10. Matrix Addition
 11. Matrix Subtraction
 12. Power of Matrix
@@ -30,4 +30,5 @@ To start the execution type<br>
 `make`
 `./matrix`
 <br>
-Matrices used are present in `containers_input.txt` and `operations_input.txt`. To test on your own matrices, please change the matrix in those respective files <br>
+Matrices used are present in `containers_input.txt` and `operations_input.txt`. 
+<br>To test on your own matrices, please change the matrix in those respective files <br>
