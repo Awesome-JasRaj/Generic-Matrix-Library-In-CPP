@@ -30,5 +30,5 @@ To start the execution type<br>
 `make`
 `./matrix`
 <br>
-Matrices used are present in `containers_input.txt` and `operations_input.txt`. 
+Matrices used are present in `initializations_input.txt` and `operations_input.txt`. 
 <br>To test on your own matrices, please change the matrix in those respective files <br>
